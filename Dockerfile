@@ -6,4 +6,4 @@ FROM gcc:latest
 	
 	RUN gcc src/gas_bill.c -o output/gas_bill
 	
-	CMD ["make run"]
+	CMD ["./gas_bill"]
