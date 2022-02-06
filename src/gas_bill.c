@@ -1,10 +1,15 @@
+//Used libraries
 #include<stdlib.h>
 #include<stdio.h>
 
+// Global Variables for all the functions 
 int used_energy = 0;
 int opc, opc2;
 
+
+//tui: main interface for the program
 int tui();
+//tui2: interface for selecting the client
 int tui2();
 
 int main()
@@ -27,6 +32,7 @@ int main()
 
 	switch(opc)
 	{
+		//Case 1: hire a new installation and the final bill depending on the client
 		case 1:
 		
 			tui2();
@@ -51,6 +57,7 @@ int main()
 			}
 		break;
 
+		//Case 2: hire more quantity with final bill depending the on the client
 		case 2:
 			
 			tui2();
@@ -81,6 +88,7 @@ int main()
 int tui()
 {
 
+	//Desing of the tui main interface
 
 	printf("\nWelcome to Pepe's Gas Company\n");
 	printf("\n");
@@ -99,6 +107,8 @@ int tui()
 int tui2()
 {
 	
+	//Desing of the second tui interface
+
 	printf("\n");
 	printf("Costumer type: \n");
 	printf("1. Company\n");
