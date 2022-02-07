@@ -1,5 +1,7 @@
 all: clean build run
 
+publish: clean build run docker
+
 clean:
 	rm -f output/gas_bill
 
@@ -8,3 +10,6 @@ build:
 
 run:
 	./output/gas_bill
+
+docker:
+	docker build . -t eltitodg/gas-bill:dev && docker push eltitodg/gas-bill:dev
