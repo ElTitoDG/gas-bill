@@ -1,6 +1,6 @@
 all: clean build run
 
-publish: clean build run docker
+publish: clean build docker run
 
 clean:
 	rm -f output/gas_bill
