@@ -45,7 +45,7 @@ int main()
 			}
 			else if(opc2 == 2)
 			{
-				printf("\nHiring new installation for Individual");
+				printf("\nHiring new installation for Individual\n");
 				final_price = 100 + (used_energy*kw) * 0.23;
 				printf("Your final bill is: %.2f$\n", final_price);
 			}
