@@ -1,9 +1,9 @@
 FROM gcc:latest
 
-	COPY . /usr/src/gas-bill
+	COPY . /gas-bill
 	
-	WORKDIR /usr/src/gas-bill
+	WORKDIR /gas-bill/
 	
-	RUN gcc src/gas_bill.c -o output/gas_bill
+	RUN gcc -o gas_bill src/gas_bill.c
 	
 	CMD ["./gas_bill"]
