@@ -6,7 +6,7 @@ This is mainly a task from collage, basically calculate an electricity and gas b
 
 ## TODO
 
-- [x] Register different types of costumers
+- [ ] Register different types of costumers
 
 ## Avalible commands 
 
