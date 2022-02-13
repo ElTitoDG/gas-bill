@@ -3,6 +3,7 @@
 ## What is this?
 
 This is mainly a task from collage, basically calculate an electricity and gas bill
+It has a docker container for learning purpose
 
 ## TODO
 
