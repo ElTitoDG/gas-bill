@@ -1,6 +1,7 @@
 //Used libraries
 #include<stdlib.h>
 #include<stdio.h>
+#include <sys/stat.h>
 
 // Global Variables for all the functions 
 int used_energy = 0;
@@ -12,8 +13,12 @@ int tui();
 //tui2: interface for selecting the client
 int tui2();
 
+int checkIfFileExists(const char* filename);
+
 int main()
 {
+
+  FILE *fp;
 
 	float final_price, kw;
 
@@ -39,48 +44,74 @@ int main()
 			scanf("%i", &opc2);
 			if(opc2 == 1)
 			{
-				printf("\nHiring new installation for company\n");
+        printf("\nCreating Company key file\n");
+        fp = fopen("docs/company.txt", "w");
+        fputs("Company key", fp);
+				printf("Hiring new installation for company\n");
 				final_price = 100 + (used_energy*kw) * 0.27;
-				printf("Your final bill is: %.2f$\n", final_price);	
+				printf("Your final bill is: %.2f$\n", final_price);
+        printf("\n");  
+        fclose(fp);
 			}
 			else if(opc2 == 2)
 			{
+        printf("\nCreating Individual key file");
+        fp = fopen("docs/individual.txt", "w");
+        fputs("Individual key", fp);
 				printf("\nHiring new installation for Individual\n");
 				final_price = 100 + (used_energy*kw) * 0.23;
 				printf("Your final bill is: %.2f$\n", final_price);
+        printf("\n");
+        fclose(fp);
 			}
 			else if(opc2 == 3)
 			{
-				printf("\nHiring new installation for Retired\n");
+				printf("\nCreating Retired key file\n");
+        fp = fopen("docs/retired.txt", "w");
+        fputs("Retired key", fp);
+        printf("\nHiring new installation for Retired\n");
 				final_price = 100 + (used_energy*kw) * 0.12;
-				printf("Your final bill is: %.2f#$\n", final_price);
+				printf("Your final bill is: %.2f$\n", final_price);
+        printf("\n");
+        fclose(fp);
 			}
 		break;
 
-		//Case 2: hire more quantity with final bill depending the on the client
+		//Case 2: Hire more quantity with final bill depending the on the client
 		case 2:
 			
 			tui2();
 			scanf("%i", &opc2);
-			if(opc == 1)
+			if(checkIfFileExists("docs/company.txt") && opc2 == 1)
 			{
-				printf("\nHiring more KW for Company\n");
+				printf("\nCompany key detected\n");
+        printf("Hiring more KW for Company\n");
 				final_price = (used_energy*kw) * 0.27;
 				printf("Your final bill is: %.2f$\n", final_price);
+        printf("\n");
 			}
-			else if(opc2 == 2)
+			else if(checkIfFileExists("docs/individual.txt") && opc2 == 2)
 			{
 				printf("\nHiring more KW for Individual\n");
 				final_price = (used_energy*kw) * 0.23;
 				printf("Your final bill is: %.2f$\n", final_price);
+        printf("\n");
 			}
-			else if(opc2 == 3)
+			else if(checkIfFileExists("docs/retired.txt") && opc2 == 3)
 			{
-				printf("\nHiring more KW for Retire\n");
+				printf("\nHiring more KW for Retired\n");
 				final_price = (used_energy*kw) * 0.12;
 				printf("Your final bill is: %.2f$\n", final_price);
+        printf("\n");
 			}
 		break;
+
+    case 3:
+      remove("docs/company.txt");
+      remove("docs/individual.txt");
+      remove("docs/retired.txt");
+      printf("\nAll user keys deleted\n");
+    break;
 	}
 	return 0;
 }
@@ -99,6 +130,7 @@ int tui()
 	printf("Choose an option: ");
 	printf("\n1. New gas installation\n");
 	printf("2. Hire more quantity\n");
+  printf("3. Delete user keys\n");
 	printf("Option: ");
 
 	return 0;
@@ -119,3 +151,18 @@ int tui2()
 	return 0;
 }
 
+
+int checkIfFileExists(const char* filename)
+{
+  struct stat buffer;
+  int exist = stat(filename, &buffer);
+  if(exist == 0)
+  {
+    return 1;
+  }
+  else 
+  {
+    printf("File doesn't exists\n");
+    return 0;
+  }
+}
