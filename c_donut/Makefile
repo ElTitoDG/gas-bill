@@ -1,4 +1,4 @@
-all: clean build run
+all: build run
 
 build:
 	clang donut.c -o c_donut -lm
