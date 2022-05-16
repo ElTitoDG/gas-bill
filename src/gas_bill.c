@@ -45,7 +45,7 @@ int main()
 			if(opc2 == 1)
 			{
         printf("\nCreating Company key file\n");
-        fp = fopen("docs/company.txt", "w");
+        fp = fopen("keys/company.txt", "w");
         fputs("Company key", fp);
 				printf("Hiring new installation for company\n");
 				final_price = 100 + (used_energy*kw) * 0.27;
@@ -56,7 +56,7 @@ int main()
 			else if(opc2 == 2)
 			{
         printf("\nCreating Individual key file");
-        fp = fopen("docs/individual.txt", "w");
+        fp = fopen("keys/individual.txt", "w");
         fputs("Individual key", fp);
 				printf("\nHiring new installation for Individual\n");
 				final_price = 100 + (used_energy*kw) * 0.23;
@@ -67,7 +67,7 @@ int main()
 			else if(opc2 == 3)
 			{
 				printf("\nCreating Retired key file\n");
-        fp = fopen("docs/retired.txt", "w");
+        fp = fopen("keys/retired.txt", "w");
         fputs("Retired key", fp);
         printf("\nHiring new installation for Retired\n");
 				final_price = 100 + (used_energy*kw) * 0.12;
@@ -82,7 +82,7 @@ int main()
 			
 			tui2();
 			scanf("%i", &opc2);
-			if(checkIfFileExists("docs/company.txt") && opc2 == 1)
+			if(checkIfFileExists("keys/company.txt") && opc2 == 1)
 			{
 				printf("\nCompany key detected\n");
         printf("Hiring more KW for Company\n");
@@ -90,14 +90,14 @@ int main()
 				printf("Your final bill is: %.2f$\n", final_price);
         printf("\n");
 			}
-			else if(checkIfFileExists("docs/individual.txt") && opc2 == 2)
+			else if(checkIfFileExists("keys/individual.txt") && opc2 == 2)
 			{
 				printf("\nHiring more KW for Individual\n");
 				final_price = (used_energy*kw) * 0.23;
 				printf("Your final bill is: %.2f$\n", final_price);
         printf("\n");
 			}
-			else if(checkIfFileExists("docs/retired.txt") && opc2 == 3)
+			else if(checkIfFileExists("keys/retired.txt") && opc2 == 3)
 			{
 				printf("\nHiring more KW for Retired\n");
 				final_price = (used_energy*kw) * 0.12;
@@ -107,9 +107,9 @@ int main()
 		break;
 
     case 3:
-      remove("docs/company.txt");
-      remove("docs/individual.txt");
-      remove("docs/retired.txt");
+      remove("keys/company.txt");
+      remove("keys/individual.txt");
+      remove("keys/retired.txt");
       printf("\nAll user keys deleted\n");
     break;
 	}
@@ -149,20 +149,4 @@ int tui2()
 	printf("Option: ");
 
 	return 0;
-}
-
-
-int checkIfFileExists(const char* filename)
-{
-  struct stat buffer;
-  int exist = stat(filename, &buffer);
-  if(exist == 0)
-  {
-    return 1;
-  }
-  else 
-  {
-    printf("File doesn't exists\n");
-    return 0;
-  }
 }

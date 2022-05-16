@@ -1,15 +1,21 @@
+CC=clang
+
+
 all: clean build run
 
 publish: clean build docker
 
 clean:
-	rm -f output/gas_bill
+	rm -f gas_bill
 
 build:
-	clang src/gas_bill.c -o output/gas_bill
+	mkdir keys
+	$(CC) -c -g bin/src/checkfile.c -o bin/checkfile.o
+	$(CC) -c -g src/gas_bill.c -o bin/gas_bill.o 
+	$(CC) bin/gas_bill.o bin/checkfile.o -o gas_bill
 
 run:
-	./output/gas_bill
+	./gas_bill
 
 docker:
 	docker build . -t eltitodg/gas-bill:dev && docker push eltitodg/gas-bill:dev
@@ -17,10 +23,10 @@ docker:
 delete keys: company individual retired
 
 company:
-	rm -r docs/company.txt
+	rm -r keys/company.txt
 
 individual:
-	rm -r docs/individual.txt
+	rm -r keys/individual.txt
 
 retired:
-	rm -r docs/retired.txt
+	rm -r keys/retired.txt
