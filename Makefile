@@ -7,16 +7,21 @@ publish: clean build docker
 
 clean:
 	rm -f gas_bill
+	rm -r bin/checkfile.o
+	rm -r bin/gas_bill.o
 	rm -r keys/
 
 keys:
 	mkdir keys
 
-build:
-	$(CC) $(FLAGS) bin/src/checkfile.c -o bin/checkfile.o
-	$(CC) $(FLAGS) src/gas_bill.c -o bin/gas_bill.o 
+build: checkfile.o gas_bill.o 
 	$(CC) bin/gas_bill.o bin/checkfile.o -o gas_bill
 
+checkfile.o:
+	$(CC) $(FLAGS) bin/src/checkfile.c -o bin/checkfile.o
+
+gas_bill.o:
+	$(CC) $(FLAGS) src/gas_bill.c -o bin/gas_bill.o
 run:
 	./gas_bill
 
