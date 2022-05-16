@@ -1,6 +1,6 @@
 # Gas Bill Calulator C Program
 ![GitHub repo size](https://img.shields.io/github/repo-size/ElTitoDG/gas-bill) ![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/ElTitoDG/gas-bill) ![Clang Version](https://img.shields.io/badge/Clang-13.0.1-brightgreen) ![Make version](https://img.shields.io/badge/Make-4.3-blue)
-![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/eltitodg/gas-bill) ![Docker Image Version (latest by date)](https://img.shields.io/docker/v/eltitodg/gas-bill) ![Nvim Version](https://img.shields.io/badge/Nvim-AstroVim-informational)
+![Docker Image Version (latest by date)](https://img.shields.io/docker/v/eltitodg/gas-bill) ![Nvim Version](https://img.shields.io/badge/Nvim-AstroVim-informational)
 ## What is this?
 
 This is mainly a task from collage, basically calculate an electricity and gas bill
@@ -8,10 +8,10 @@ It has a docker container for learning purpose
 
 ## TODO
 
-- [ ] Update Makefile
+- [x] Update Makefile
 - [x] Add Badges to README
 - [ ] Add License
-- [ ] Update Dockerfile
+- [x] Update Dockerfile
 - [ ] Continue lib integration
 
 ## Avalible commands 
