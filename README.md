@@ -8,7 +8,7 @@ It has a docker container for learning purpose
 ## TODO
 
 - [ ] Update Makefile
-- [ ] Add Badges to README
+- [x] Add Badges to README
 - [ ] Add License
 - [ ] Update Dockerfile
 - [ ] Continue lib integration
