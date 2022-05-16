@@ -3,7 +3,7 @@ FLAGS= -std=c18 -Wall -c -g
 
 all: keys build run clean
 
-publish: clean build docker
+publish: build docker clean
 
 clean:
 	rm -f gas_bill
