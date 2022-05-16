@@ -7,11 +7,11 @@ It has a docker container for learning purpose
 
 ## TODO
 
-- [x] Update Makefile
-- [x] Add Badges to README
-- [x] Add License
-- [x] Update Dockerfile
-- [x] Continue lib integration
+- [ ] Update Makefile
+- [ ] Add Badges to README
+- [ ] Add License
+- [ ] Update Dockerfile
+- [ ] Continue lib integration
 
 ## Avalible commands 
 
