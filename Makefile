@@ -1,22 +1,27 @@
 CC=clang
-FLAGS= -std=c18 -c -g
+FLAGS= -std=c18 -Wall -c -g
 
-all: clean keys build run
+all: keys build run clean
 
-publish: clean build docker
+publish: build docker clean
 
 clean:
 	rm -f gas_bill
+	rm -r bin/checkfile.o
+	rm -r bin/gas_bill.o
 	rm -r keys/
 
 keys:
 	mkdir keys
 
-build:
-	$(CC) $(FLAGS) bin/src/checkfile.c -o bin/checkfile.o
-	$(CC) $(FLAGS) src/gas_bill.c -o bin/gas_bill.o 
+build: checkfile.o gas_bill.o 
 	$(CC) bin/gas_bill.o bin/checkfile.o -o gas_bill
 
+checkfile.o:
+	$(CC) $(FLAGS) bin/src/checkfile.c -o bin/checkfile.o
+
+gas_bill.o:
+	$(CC) $(FLAGS) src/gas_bill.c -o bin/gas_bill.o
 run:
 	./gas_bill
 
