@@ -7,7 +7,11 @@ It has a docker container for learning purpose
 
 ## TODO
 
-- [x] Register different types of costumers
+- [] Update Makefile
+- [] Add Badges to README
+- [] Add License
+- [] Update Dockerfile
+- [] Continue lib integration
 
 ## Avalible commands 
 
