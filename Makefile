@@ -1,7 +1,7 @@
 CC=clang
 FLAGS= -std=c18 -Wall -c -g
 
-all: clean keys build run
+all: keys build run clean
 
 publish: clean build docker
 
