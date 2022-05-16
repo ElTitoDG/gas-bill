@@ -42,3 +42,7 @@ individual:
 
 retired:
 	rm -r keys/retired.txt
+
+tree:
+	clear
+	exa --tree
