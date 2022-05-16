@@ -9,6 +9,7 @@ clean:
 	rm -f gas_bill
 	rm -r bin/checkfile.o
 	rm -r bin/gas_bill.o
+	rm -r bin/tui.o
 	rm -r keys/
 
 keys:
