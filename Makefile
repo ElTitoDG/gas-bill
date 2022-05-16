@@ -1,5 +1,5 @@
 CC=clang
-FLAGS= -std=c18 -c -g
+FLAGS= -std=c18 -Wall -c -g
 
 all: clean keys build run
 
