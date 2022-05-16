@@ -1,3 +1,5 @@
 /output
 /test
 docs
+.DS_Store
+*.o
