@@ -5,8 +5,8 @@ FROM ubuntu:latest
 	WORKDIR /gas-bill/
 
   RUN apt update
-  RUN apt install -y build-essential
+  RUN apt install -y build-essential clang make
 	
-	RUN gcc -o gas_bill src/gas_bill.c
+	RUN make all
 	
 	CMD ["./gas_bill"]

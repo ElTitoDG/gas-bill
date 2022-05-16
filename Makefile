@@ -1,12 +1,13 @@
 CC=clang
 FLAGS= -std=c18 -c -g
 
-all: clean build run
+all: clean keys build run
 
 publish: clean build docker
 
 clean:
 	rm -f gas_bill
+	rm -r keys/
 
 keys:
 	mkdir keys
@@ -22,7 +23,7 @@ run:
 docker:
 	docker build . -t eltitodg/gas-bill:dev && docker push eltitodg/gas-bill:dev
 
-delete keys: company individual retired
+delete_keys: company individual retired
 
 company:
 	rm -r keys/company.txt
