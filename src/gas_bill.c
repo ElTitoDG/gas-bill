@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include <sys/stat.h>
+#include "../bin/include/checkfile.h"
 
 // Global Variables for all the functions 
 int used_energy = 0;
