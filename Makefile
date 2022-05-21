@@ -9,19 +9,24 @@ clean:
 	rm -f gas_bill
 	rm -r bin/checkfile.o
 	rm -r bin/gas_bill.o
+	rm -r bin/tui.o
 	rm -r keys/
 
 keys:
 	mkdir keys
 
-build: checkfile.o gas_bill.o 
-	$(CC) bin/gas_bill.o bin/checkfile.o -o gas_bill
+build: checkfile.o gas_bill.o tui.o
+	$(CC) bin/gas_bill.o bin/checkfile.o bin/tui.o -o gas_bill
 
 checkfile.o:
 	$(CC) $(FLAGS) bin/src/checkfile.c -o bin/checkfile.o
 
 gas_bill.o:
 	$(CC) $(FLAGS) src/gas_bill.c -o bin/gas_bill.o
+
+tui.o:
+	$(CC) $(FLAGS) bin/src/tui.c -o bin/tui.o
+
 run:
 	./gas_bill
 
@@ -38,3 +43,7 @@ individual:
 
 retired:
 	rm -r keys/retired.txt
+
+tree:
+	clear
+	exa --tree

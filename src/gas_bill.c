@@ -3,22 +3,23 @@
 #include<stdio.h>
 #include <sys/stat.h>
 #include "../bin/include/checkfile.h"
+#include "../bin/include/tui.h"
 
 // Global Variables for all the functions 
-int used_energy = 0;
+//int used_energy = 0;
 int opc, opc2;
 
 
 //tui: main interface for the program
-int tui();
+ int tui();
 //tui2: interface for selecting the client
-int tui2();
+ int tui2();
 
 int checkIfFileExists(const char* filename);
 
 int main()
 {
-
+  int used_energy = 0;
   FILE *fp;
 
 	float final_price, kw;
@@ -117,37 +118,37 @@ int main()
 	return 0;
 }
 
-int tui()
-{
+// int tui()
+// {
 
-	//Desing of the tui main interface
+// 	//Desing of the tui main interface
 
-	printf("\nWelcome to Pepe's Gas Company\n");
-	printf("\n");
-	printf("Amount of KW to employ: ");
-	scanf("%i", &used_energy);
+// 	printf("\nWelcome to Pepe's Gas Company\n");
+// 	printf("\n");
+// 	printf("Amount of KW to employ: ");
+// 	scanf("%i", &used_energy);
 	
-	printf("\n");
-	printf("Choose an option: ");
-	printf("\n1. New gas installation\n");
-	printf("2. Hire more quantity\n");
-  printf("3. Delete user keys\n");
-	printf("Option: ");
+// 	printf("\n");
+// 	printf("Choose an option: ");
+// 	printf("\n1. New gas installation\n");
+// 	printf("2. Hire more quantity\n");
+//   printf("3. Delete user keys\n");
+// 	printf("Option: ");
 
-	return 0;
-}
+// 	return 0;
+// }
 
-int tui2()
-{
+// int tui2()
+// {
 	
-	//Desing of the second tui interface
+// 	//Desing of the second tui interface
 
-	printf("\n");
-	printf("Costumer type: \n");
-	printf("1. Company\n");
-	printf("2. Individual\n");
-	printf("3. Retired\n");
-	printf("Option: ");
+// 	printf("\n");
+// 	printf("Costumer type: \n");
+// 	printf("1. Company\n");
+// 	printf("2. Individual\n");
+// 	printf("3. Retired\n");
+// 	printf("Option: ");
 
-	return 0;
-}
+// 	return 0;
+// }
