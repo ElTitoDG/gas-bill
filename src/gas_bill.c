@@ -46,7 +46,7 @@ int main()
 			scanf("%i", &opc2);
 			if(opc2 == 1)
 			{
-        printf("\nCreating Company key file\n");
+        printf("\nCreatting Company key file\n");
         fp = fopen("keys/company.txt", "w");
         fputs("Company key", fp);
 				printf("Hiring new installation for company\n");
