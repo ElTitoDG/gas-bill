@@ -10,7 +10,7 @@ It has a docker container for learning purpose
 
 - [x] Update Makefile
 - [x] Add Badges to README
-- [ ] Add License
+- [x] Add License
 - [x] Update Dockerfile
 - [ ] Continue lib integration
 
