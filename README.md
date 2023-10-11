@@ -24,7 +24,8 @@ A **Make** command it is also avalible to publish it in Docker:
 `make publish` 
 
 ### Make 
-This repository include a Makefile, so you can use commands to build the program 
+This repository include a Makefile, so you can use commands to build the program
+
 - **all**: `make all`  
 - **build**: `make build`  
 - **clean**: `make clean`  
